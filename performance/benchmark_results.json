@@ -1,0 +1,221 @@
+[
+  {
+    "dataset": "data_20_rooms.json",
+    "dataset_path": "c:\\Users\\Melvy\\Documents\\ITS\\AI\\ai-timetable-optimizer\\data\\data_20_rooms.json",
+    "num_runs": 5,
+    "results": {
+      "Genetic Algorithm": {
+        "runs": 5,
+        "success": 5,
+        "mean_conflicts": 0,
+        "mean_time_seconds": 1.3762733936309814,
+        "min_time_seconds": 0.8097796440124512,
+        "max_time_seconds": 1.8334319591522217,
+        "times_seconds": [
+          1.4947271347045898,
+          0.8097796440124512,
+          1.8334319591522217,
+          1.3053886890411377,
+          1.4380395412445068
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "Hill Climbing": {
+        "runs": 5,
+        "success": 5,
+        "mean_conflicts": 0,
+        "mean_time_seconds": 6.913954067230224,
+        "min_time_seconds": 3.6838974952697754,
+        "max_time_seconds": 13.726346015930176,
+        "times_seconds": [
+          13.726346015930176,
+          4.699058532714844,
+          3.6838974952697754,
+          5.55358099937439,
+          6.9068872928619385
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "DFS + Backtracking": {
+        "runs": 5,
+        "success": 5,
+        "mean_conflicts": 0,
+        "mean_time_seconds": 0.2244842529296875,
+        "min_time_seconds": 0.20720291137695312,
+        "max_time_seconds": 0.24306392669677734,
+        "times_seconds": [
+          0.21674394607543945,
+          0.20720291137695312,
+          0.24306392669677734,
+          0.22928643226623535,
+          0.22612404823303223
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  {
+    "dataset": "data_15_rooms.json",
+    "dataset_path": "c:\\Users\\Melvy\\Documents\\ITS\\AI\\ai-timetable-optimizer\\data\\data_15_rooms.json",
+    "num_runs": 5,
+    "results": {
+      "Genetic Algorithm": {
+        "runs": 5,
+        "success": 5,
+        "mean_conflicts": 0,
+        "mean_time_seconds": 7.783422422409058,
+        "min_time_seconds": 3.745784282684326,
+        "max_time_seconds": 13.54377031326294,
+        "times_seconds": [
+          3.745784282684326,
+          6.525407552719116,
+          6.2653563022613525,
+          13.54377031326294,
+          8.836793661117554
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "Hill Climbing": {
+        "runs": 5,
+        "success": 4,
+        "mean_conflicts": 0.2,
+        "mean_time_seconds": 12.101203870773315,
+        "min_time_seconds": 4.950989484786987,
+        "max_time_seconds": 25.748393058776855,
+        "times_seconds": [
+          10.929179191589355,
+          4.950989484786987,
+          4.974357843399048,
+          13.903099775314331,
+          25.748393058776855
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      "DFS + Backtracking": {
+        "runs": 5,
+        "success": 5,
+        "mean_conflicts": 0,
+        "mean_time_seconds": 0.21983017921447753,
+        "min_time_seconds": 0.1966993808746338,
+        "max_time_seconds": 0.25002336502075195,
+        "times_seconds": [
+          0.25002336502075195,
+          0.19701910018920898,
+          0.24313044548034668,
+          0.1966993808746338,
+          0.2122786045074463
+        ],
+        "conflicts": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  {
+    "dataset": "data_12_rooms.json",
+    "dataset_path": "c:\\Users\\Melvy\\Documents\\ITS\\AI\\ai-timetable-optimizer\\data\\data_12_rooms.json",
+    "num_runs": 5,
+    "results": {
+      "Genetic Algorithm": {
+        "runs": 5,
+        "success": 3,
+        "mean_conflicts": 0.6,
+        "mean_time_seconds": 22.02456455230713,
+        "min_time_seconds": 9.313107967376709,
+        "max_time_seconds": 34.54346179962158,
+        "times_seconds": [
+          34.54346179962158,
+          9.313107967376709,
+          24.062320947647095,
+          29.693992614746094,
+          12.509939432144165
+        ],
+        "conflicts": [
+          2,
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      "Hill Climbing": {
+        "runs": 5,
+        "success": 0,
+        "mean_conflicts": 2.8,
+        "mean_time_seconds": 26.507541608810424,
+        "min_time_seconds": 25.457845449447632,
+        "max_time_seconds": 28.159908533096313,
+        "times_seconds": [
+          25.457845449447632,
+          25.553319454193115,
+          28.159908533096313,
+          26.897374153137207,
+          26.469260454177856
+        ],
+        "conflicts": [
+          4,
+          3,
+          2,
+          3,
+          2
+        ]
+      },
+      "DFS + Backtracking": {
+        "runs": 5,
+        "success": 0,
+        "mean_conflicts": 999,
+        "mean_time_seconds": 30.000948762893678,
+        "min_time_seconds": 30.000659227371216,
+        "max_time_seconds": 30.001096725463867,
+        "times_seconds": [
+          30.000929355621338,
+          30.000659227371216,
+          30.000993728637695,
+          30.001096725463867,
+          30.001064777374268
+        ],
+        "conflicts": [
+          999,
+          999,
+          999,
+          999,
+          999
+        ]
+      }
+    }
+  }
+]

@@ -3,6 +3,7 @@ import random
 import statistics
 import sys
 import os
+import json
 
 # 1. On récupère le dossier où se trouve ce script (le dossier "performance")
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -24,6 +25,20 @@ DATASETS = [
     os.path.join(root_dir, "data", "data_15_rooms.json"),
     os.path.join(root_dir, "data", "data_12_rooms.json")
 ]
+
+
+def summarize_results(times, conflicts, num_runs):
+    return {
+        "runs": num_runs,
+        "success": sum(1 for conflicts_count in conflicts if conflicts_count == 0),
+        "mean_conflicts": statistics.mean(conflicts),
+        "mean_time_seconds": statistics.mean(times),
+        "min_time_seconds": min(times),
+        "max_time_seconds": max(times),
+        "times_seconds": times,
+        "conflicts": conflicts
+    }
+
 
 def run_benchmark_for_dataset(dataset_path, num_runs=5):
     print(f"\n{'='*70}")
@@ -114,9 +129,33 @@ def run_benchmark_for_dataset(dataset_path, num_runs=5):
     print(f"| Genetic Algorithm | {ga_success}/{num_runs} | {ga_mean_c:.1f} | {ga_mean_t:.3f} s | {min(ga_times):.3f}–{max(ga_times):.3f} s |")
     print(f"| Hill Climbing | {hc_success}/{num_runs} | {hc_mean_c:.1f} | {hc_mean_t:.3f} s | {min(hc_times):.3f}–{max(hc_times):.3f} s |")
 
+    return {
+        "dataset": os.path.basename(dataset_path),
+        "dataset_path": dataset_path,
+        "num_runs": num_runs,
+        "results": {
+            "Genetic Algorithm": summarize_results(ga_times, ga_conflicts, num_runs),
+            "Hill Climbing": summarize_results(hc_times, hc_conflicts, num_runs),
+            "DFS + Backtracking": summarize_results(dfs_times, dfs_conflicts, num_runs)
+        }
+    }
+
+
+def save_benchmark_results(results):
+    json_path = os.path.join(current_dir, "benchmark_results.json")
+
+    with open(json_path, "w", encoding="utf-8") as file:
+        json.dump(results, file, indent=2)
+
+    print(f"Résultats sauvegardés dans : {json_path}")
+
 if __name__ == "__main__":
+    benchmark_results = []
     for ds in DATASETS:
         if os.path.exists(ds):
-            run_benchmark_for_dataset(ds)
+            benchmark_results.append(run_benchmark_for_dataset(ds))
         else:
             print(f"\n⚠️ Fichier introuvable : {ds}. Vérifie le chemin.")
+
+    if benchmark_results:
+        save_benchmark_results(benchmark_results)
